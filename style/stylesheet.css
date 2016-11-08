@@ -1,6 +1,35 @@
 * { padding:0px; margin:0px auto; }
-html, body { background-color:#299457; color:#222222; font:normal 9pt "Trebuchet MS", Verdana, Arial; }
+html, body { background-color:#222222; color:#FFFFFF; font:normal 14pt "Trebuchet MS", Verdana, Arial; }
 
 h1 { font-size:25pt; }
+h2 { font-size:20pt; }
+h3 { font-size:15pt; }
 
-#wrapper { width:1000px; margin-top:100px; }
+/** CLEARFIX for floated elements */
+.cf:before, .cf:after { content:""; display:table; } /* For modern browsers */
+.cf:after { clear:both; } /* For modern browsers */
+.cf { *zoom:1; } /* For IE 6/7 (triggers hasLayout) */
+
+#wrapper { width:100%; }
+#wrapper .content_area { width:1080px; padding:0px 50px; }
+
+/* NAVIGATION */
+#wrapper #nav { width:100%; background-color:#111111; }
+#wrapper #nav .content_area li { width:150px; padding:3px 5px; color:#A9A505; text-align:center; border-bottom:2px solid #111111; list-style:none; float:right; cursor:pointer; }
+#wrapper #nav .content_area li:hover { border-bottom:2px solid #A9A505; }
+
+/* HEADER SECTION */
+#wrapper #header .content_area { height:200px; padding-top:150px; }
+#wrapper #header h1 { font-size:36pt; }
+
+/* ABOUT SECTION */
+#wrapper #about { height:300px; background-color:#807C01; box-shadow:5px 5px 10px #000; }
+#wrapper #about .content_area { padding-top:50px; color:#222222; }
+#wrapper #about h3 { font-size:24pt; }
+
+/* SKILLS SECTION */
+#wrapper #skills { height:300px; }
+#wrapper #skills .content_area { padding-top:50px; }
+#wrapper #skills .content_area .skill { width:100px; height:100px; padding:; margin:0px 10px 10px 0px; background-color:#111111; float:left; }
+#wrapper #skills .content_area .skill .skill_plus { width:20px; padding:1px 0px; text-align:center; background-color:#000000; color:#111111; position:relative; left:40px; cursor:pointer; }
+#wrapper #skills .content_area .skill .skill_plus:hover { background-color:#333333; }
