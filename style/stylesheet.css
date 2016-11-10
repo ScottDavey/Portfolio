@@ -1,5 +1,5 @@
 * { padding:0px; margin:0px auto; }
-html, body { background-color:#222222; color:#FFFFFF; font:normal 14pt "Trebuchet MS", Verdana, Arial; }
+html, body { background-color:#222222; color:#FFFFFF; font:normal 14pt Ubuntu, Verdana, Arial; }
 
 h1 { font-size:25pt; }
 h2 { font-size:20pt; }
@@ -15,16 +15,16 @@ h3 { font-size:15pt; }
 
 /* NAVIGATION */
 #wrapper #nav { width:100%; background-color:#111111; }
-#wrapper #nav .content_area li { width:150px; padding:3px 5px; color:#A9A505; text-align:center; border-bottom:2px solid #111111; list-style:none; float:right; cursor:pointer; }
+#wrapper #nav .content_area li { width:150px; padding:3px 5px; color:#A9A505; font-family:Lobster, Verdana, Arial; text-align:center; border-bottom:2px solid #111111; list-style:none; float:right; cursor:pointer; }
 #wrapper #nav .content_area li:hover { border-bottom:2px solid #A9A505; }
 
 /* HEADER SECTION */
-#wrapper #header .content_area { height:200px; padding-top:150px; }
-#wrapper #header h1 { font-size:36pt; }
+#wrapper #header .content_area { height:225px; padding-top:125px; font-family:Lobster, Verdana, Arial; }
+#wrapper #header h1 { font-size:52pt; }
 
 /* ABOUT SECTION */
-#wrapper #about { height:300px; background-color:#807C01; box-shadow:5px 5px 10px #000; }
-#wrapper #about .content_area { padding-top:50px; color:#222222; }
+#wrapper #about { height:500px; background-color:#807C01; box-shadow:5px 5px 10px #000; }
+#wrapper #about .content_area { padding-top:50px; color:#222222; font:normal 20pt Jura, Verdana, Arial; }
 #wrapper #about h3 { font-size:24pt; }
 
 /* SKILLS SECTION */
