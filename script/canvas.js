@@ -1,6 +1,8 @@
 function Animation () {
 	this.camera = {};
+	this.controls = {};
 	this.scene	= {};
+	this.floor = {};
 	this.box	= {};
 	this.hemiLight	= {};
 }
@@ -11,15 +13,16 @@ Animation.prototype.initialize = function () {
 
 	// Camera
 	this.camera = new THREE.PerspectiveCamera(75, main.ASPECT_RATIO, 1, 1000);
-	this.scene.add(this.camera);
+	this.camera.position.set(0, 0, 50);
+	this.controls = new THREE.OrbitControls(this.camera, main.renderer.domElement);
+	this.controls.target.set(0, 0, 0);
+	this.controls.update();
+	//this.scene.add(this.controls.getObject());
 
 	// Lights
-	this.hemiLight = new THREE.AmbientLight(0xFF9329, 0.1);
+	this.hemiLight = new THREE.AmbientLight(0xFFFFFF, 0xFFFFFF, 0.2);
 	this.scene.add(this.hemiLight);
 
-	// Geometry
-	this.box = new THREE.Mesh(new THREE.BoxBufferGeometry(20, 20, 20), new THREE.MeshStandardMaterial({color:0xFFFFFF}));
-	this.scene.add(this.box);
 };
 
 Animation.prototype.update = function () {
@@ -34,8 +37,8 @@ Animation.prototype.draw = function () {
 
 var main = {
 	init: function () {
-		this.CANVAS_WIDTH		= window.innerWidth-5;
-		this.CANVAS_HEIGHT		= window.innerHeight-5;
+		this.CANVAS_WIDTH		= window.innerWidth-20;
+		this.CANVAS_HEIGHT		= window.innerHeight-20;
 		this.ASPECT_RATIO		= this.CANVAS_WIDTH / this.CANVAS_HEIGHT;
 		this.canvas 			= {};
 		this.context 			= {};
@@ -53,7 +56,11 @@ var main = {
 		this.renderer.setSize(this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
 		this.container.appendChild(this.renderer.domElement);
 
+		// Event Handlers
+		window.addEventListener('resize', main.onWindowResize, false);
+
 		this.animation.initialize();
+		main.onWindowResize();
 		main.run();
 
 	},
@@ -61,8 +68,15 @@ var main = {
 		main.animation.update();
 		main.animation.draw();
 		requestAnimationFrame(main.run);
+	},
+	onWindowResize: function () {
+		var width, height;
+		width = window.innerWidth;
+		height = window.innerHeight;
+		main.animation.camera.aspect = width / height;
+		main.animation.camera.updateProjectionMatrix();
+		main.renderer.setSize(width, height);
 	}
-
 };
 
 
