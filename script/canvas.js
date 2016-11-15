@@ -11,17 +11,19 @@ Animation.prototype.initialize = function () {
 	this.scene = new THREE.Scene();
 	this.scene.fog = new THREE.Fog(0xFFFFFF, 0, 100);
 
-	// Camera
+	// Camera & Controls
 	this.camera = new THREE.PerspectiveCamera(75, main.ASPECT_RATIO, 1, 1000);
 	this.camera.position.set(0, 0, 50);
 	this.controls = new THREE.OrbitControls(this.camera, main.renderer.domElement);
 	this.controls.target.set(0, 0, 0);
 	this.controls.update();
-	//this.scene.add(this.controls.getObject());
 
 	// Lights
-	this.hemiLight = new THREE.AmbientLight(0xFFFFFF, 0xFFFFFF, 0.2);
+	this.hemiLight = new THREE.AmbientLight(0xFFFFFF, 0x555555, 0.2);
 	this.scene.add(this.hemiLight);
+
+	// Geometry
+	// this.box = new THREE.Mesh(new THREE.BoxBufferGeometry(), new THREE.StandardMeshMaterial({ color:0xFFFFFF }));
 
 };
 
