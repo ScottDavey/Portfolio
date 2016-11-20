@@ -102,12 +102,18 @@ var main = {
 			navActiveInd.animate({left: main.navigation.currentActive.nav.posX}, 500, function () { main.navigation.isAutoScroll = false; });
 		},
 		activePageAnimation: function () {
-			var activeNavItemText, activePagePosY, whiteOverlay;
+			var activeNavItemText, activePagePosY, whiteOverlay, content;
+			content = main.navigation.currentActive.page.el.find('.content');
 			whiteOverlay = $('#white_overlay');
 			whiteOverlay.hide();
+			$('.content').hide();
 			if (!main.navigation.currentActive.page.ignoreOverlay) {
 				whiteOverlay.css('top', main.navigation.currentActive.page.offsetY);
-				whiteOverlay.fadeIn(400);
+				whiteOverlay.fadeIn(200, function () { 
+					setTimeout(function () { 
+						content.fadeIn(500); 
+					}, 200);
+				});
 			}
 		},
 		onPageScroll: function () {

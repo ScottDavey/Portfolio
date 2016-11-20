@@ -27,7 +27,7 @@ html, body { color:#FFFFFF; font:normal 16pt Ubuntu, Verdana, Arial; height:100%
 
 /* PAGE ELEMENT */
 #wrapper .page { width:100%; height:1080px; overflow-x:hidden; }
-#wrapper .page .content { width:75%;  }
+#wrapper .page .content { width:85%; height:780px; position:relative; top:150px; margin:0px auto; display:none; }
 
 /* INTRO */
 #wrapper #intro {  }
@@ -36,13 +36,14 @@ html, body { color:#FFFFFF; font:normal 16pt Ubuntu, Verdana, Arial; height:100%
 #wrapper #intro #intro_title h4 { font:normal 24px Jura, Cursive, Arial; text-align:center; }
 
 /* ME */
-#wrapper #me { background:url('../images/Background_Mountain_Orange.jpg') no-repeat; background-size:1920px; font-family:"Raleway", Verdana, Arial; }
-/*#wrapper #me .content { width:1820px; height:740px; margin:170px auto; font-size:20px; }
-#wrapper #me .content #blurb { width:1715px; padding:50px; margin-bottom:5px; background-color:#FFFFFF; color:#111111; border-radius:10px 10px 0px 0px; opacity:0.6; }
-#wrapper #me .content #pic img { width:450px; margin-right:5px; float:left; }*/
+#wrapper #me { background:url('../images/Background_Mountain_Orange.jpg') no-repeat; background-size:1920px; }
+#wrapper #me .content h3 { font:normal 70px "Homemade Apple", verdana, Arial; }
+#wrapper #me .content #pics { width:500px; min-width:500px; width:40%; }
+#wrapper #me .content #blurb { width:500px; width:60%; font:normal 30px "Josefin Sans", Verdana, Arial; }
 
 /* TOOLBOX */
 #wrapper #toolbox { background:url('../images/Background_Flower_Orange.jpg') no-repeat; background-size:1920px; }
+#wrapper #toolbox .content .tool { width:350px; margin:20px 0px 0px 20px; padding:100px 0px; background-color:#111111; text-align:center; opacity:0.9; float:left; }
 
 /* WORKS */
 #wrapper #works { background:url('../images/Background_Marsh.jpg') no-repeat; background-size:1920px; }
