@@ -23,19 +23,18 @@ var main = {
 		// Handle the scroll event (to update active indicator when scroll to a page)
 		theWindow.on('scroll', main.navigation.onPageScroll);
 
-
 		// Begin intro animation
 		main.intro(activeNavItem);
 	},
 	intro: function (activeNavItem) {
 		var introImg, introOveraly, introTitle, windowHeight;
-		introImg = $('<img />').attr('src', 'images/Background_Fog_Warm.jpg')
+		introImg = $('<img />').attr('src', 'images/Background_Fog_Warm.jpg');
 		introOveraly = $('#intro_overlay');
 		introTitle = $('#intro_title');
 		windowHeight = $(window).height();
 
 		// Once the intro image is loaded, set it as the div's background image, then proceed with animation
-		introImg.ready(function () {
+		introImg.on('load', function () {
 			var introDiv;
 			introDiv = $('#intro');
 			introDiv.css({ 'background-image': 'url(' + introImg.attr('src') + ')', 'background-repeat': ' no-repeat', 'background-size': '1920px' });
