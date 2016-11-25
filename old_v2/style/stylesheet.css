@@ -1,0 +1,52 @@
+* { padding:0px; margin:0px; }
+html, body { color:#FFFFFF; font:normal 16pt Ubuntu, Verdana, Arial; height:100%; }
+
+.left { float:left; }
+.one-third { width:33%; float:left; }
+.two-third { width:66%; float:left; }
+.one-half { width:50%; float:left; }
+.one-quarter { width:25%; float:left; }
+.three-quarter { width:75%; float:left; }
+
+/** CLEARFIX for floated elements */
+.cf:before, .cf:after { content:""; display:table; } /* For modern browsers */
+.cf:after { clear:both; } /* For modern browsers */
+.cf { *zoom:1; } /* For IE 6/7 (triggers hasLayout) */
+
+#intro_overlay { width:100%; height:100%; position:absolute; top:0; left:0; background-color:#000000; z-index:200; }
+#intro_overlay #intro_loading { width:800px; height:600px; position:absolute; top:50%; left:50%; margin-left:-400px; margin-top:-300px; }
+#page_overlay { width:100%; height:1080px; opacity:0.5; position:absolute; display:none; }
+
+#wrapper { width:100%; height:100%; }
+
+/* NAVIGATION */
+#wrapper #nav { width:100%; height:50px; background-color:#000000; opacity:0.8; position:fixed; z-index:100; }
+#wrapper #nav #nav_active_ind { width:150px; height:48px; border-bottom:2px solid #FFFFFF; position:absolute; }
+#wrapper #nav ul li { width:150px; height:26px; padding:12px 0px; color:#FFFFFF; font-family:"Josefin Sans", Verdana, Arial; text-align:center; list-style:none; float:right; cursor:pointer; }
+#wrapper #nav ul li:hover { background-color:#222222; }
+
+/* PAGE ELEMENT */
+#wrapper .page { width:100%; height:1080px; overflow-x:hidden; }
+#wrapper .page .content { width:1080px; height:780px; position:relative; top:150px; margin:0px auto; display:none; }
+
+/* INTRO */
+#wrapper #intro { width:100%; }
+#wrapper #intro #intro_title { height:175px; position:relative; top:700px; left:0; opacity:0; }
+#wrapper #intro #intro_title h1 { font:normal 100px Lobster, Cursive, Arial; text-align:center; }
+#wrapper #intro #intro_title h4 { font:normal 24px Jura, Cursive, Arial; text-align:center; }
+
+/* ME */
+#wrapper #me { background:url('../images/Background_Mountain_Orange.jpg') no-repeat; background-size:1920px; }
+#wrapper #me .content h3 { font:normal 50px "Homemade Apple", verdana, Arial; }
+#wrapper #me .content #pics { width:300px; margin-right:10px; }
+#wrapper #me .content #blurb { width:770px; font:normal 25px "Josefin Sans", Verdana, Arial; }
+
+/* TOOLBOX */
+#wrapper #toolbox { background:url('../images/Background_Flower_Orange.jpg') no-repeat; background-size:1920px; }
+#wrapper #toolbox .content .tool { width:350px; margin:20px 0px 0px 20px; padding:100px 0px; background-color:#111111; text-align:center; opacity:0.9; float:left; }
+
+/* WORKS */
+#wrapper #works { background:url('../images/Background_Marsh.jpg') no-repeat; background-size:1920px; }
+
+/* OUTRO */
+#wrapper #outro { background-color:#111111; border-top:2px solid #333333; box-shadow:0px 0px 10px #000000; }

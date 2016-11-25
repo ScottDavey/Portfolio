@@ -102,14 +102,17 @@ var main = {
 			navActiveInd.animate({left: main.navigation.currentActive.nav.posX}, 500, function () { main.navigation.isAutoScroll = false; });
 		},
 		activePageAnimation: function () {
-			var activeNavItemText, activePagePosY, whiteOverlay, content;
+			var activeNavItemText, activePagePosY, pageOverlay, content, contentColor;
 			content = main.navigation.currentActive.page.el.find('.content');
-			whiteOverlay = $('#white_overlay');
-			whiteOverlay.hide();
+			contentColor = content.data('overlaycolor');
+			contentColor = (typeof contentColor === 'undefined') ? '#FFFFFF' : contentColor;
+			pageOverlay = $('#page_overlay');
+			pageOverlay.hide();
 			$('.content').hide();
+			pageOverlay.css('background-color', contentColor);
 			if (!main.navigation.currentActive.page.ignoreOverlay) {
-				whiteOverlay.css('top', main.navigation.currentActive.page.offsetY);
-				whiteOverlay.fadeIn(200, function () { 
+				pageOverlay.css('top', main.navigation.currentActive.page.offsetY);
+				pageOverlay.fadeIn(200, function () { 
 					setTimeout(function () { 
 						content.fadeIn(500); 
 					}, 200);
